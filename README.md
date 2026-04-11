@@ -21,5 +21,7 @@ The seminar brings together researchers working at the intersection of innovatio
 
 ## Website
 
-The seminar schedule and speaker information are available via `index.html`, which serves as the main webpage for this seminar series.
+The seminar schedule and speaker information are available at:
+
+👉 **https://dongboshi.github.io/titlefree_seminar/**
 
