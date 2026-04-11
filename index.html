@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Titleless Seminar for Science, Innovation, and Growth</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue-dark:   #1a4a8a;
+      --blue-mid:    #2563eb;
+      --blue-light:  #dbeafe;
+      --blue-border: #bfdbfe;
+      --white:       #ffffff;
+      --gray-bg:     #f8fafc;
+      --gray-text:   #475569;
+      --gray-soft:   #e2e8f0;
+      --text:        #1e293b;
+      --radius:      10px;
+      --shadow:      0 2px 12px rgba(37,99,235,.10);
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--gray-bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    /* ── Header ─────────────────────────────────────────── */
+    header {
+      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-mid) 100%);
+      color: var(--white);
+      padding: 3rem 1.5rem 2.5rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: clamp(1.5rem, 4vw, 2.4rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      max-width: 720px;
+      margin: 0 auto .75rem;
+    }
+    header p.tagline {
+      font-size: 1rem;
+      opacity: .85;
+      max-width: 580px;
+      margin: 0 auto;
+    }
+
+    /* ── Organizers ──────────────────────────────────────── */
+    .organizers {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-soft);
+      padding: 1.25rem 1.5rem;
+      text-align: center;
+    }
+    .organizers span.label {
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--gray-text);
+      margin-right: .5rem;
+    }
+    .organizers ul {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: .5rem 1.25rem;
+      list-style: none;
+      justify-content: center;
+      margin-top: .35rem;
+    }
+    .organizers li {
+      font-size: .95rem;
+      font-weight: 600;
+      color: var(--blue-dark);
+    }
+    .organizers li::before {
+      content: "●";
+      color: var(--blue-mid);
+      margin-right: .4rem;
+      font-size: .55rem;
+      vertical-align: middle;
+    }
+
+    /* ── Main layout ─────────────────────────────────────── */
+    main {
+      max-width: 860px;
+      margin: 2.5rem auto;
+      padding: 0 1.25rem 4rem;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--blue-dark);
+      border-left: 4px solid var(--blue-mid);
+      padding-left: .75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── Seminar card ────────────────────────────────────── */
+    .seminar-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    article.seminar-card {
+      background: var(--white);
+      border: 1px solid var(--blue-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: box-shadow .2s, border-color .2s;
+    }
+    article.seminar-card:hover {
+      box-shadow: 0 6px 24px rgba(37,99,235,.18);
+      border-color: var(--blue-mid);
+    }
+
+    .card-header {
+      background: var(--blue-light);
+      padding: 1rem 1.5rem .9rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: .5rem 1.5rem;
+      border-bottom: 1px solid var(--blue-border);
+    }
+    .card-header-info { flex: 1 1 260px; }
+    .card-header h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--blue-dark);
+      margin-bottom: .25rem;
+    }
+    .speaker-name {
+      font-size: .95rem;
+      font-weight: 600;
+      color: var(--blue-mid);
+    }
+    .card-meta {
+      flex: 0 0 auto;
+      text-align: right;
+      font-size: .82rem;
+      color: var(--gray-text);
+      min-width: 140px;
+    }
+    .card-meta .date {
+      font-weight: 700;
+      color: var(--blue-dark);
+      font-size: .9rem;
+    }
+
+    .card-body {
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+    .card-body section { }
+    .card-body section h3 {
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .09em;
+      color: var(--gray-text);
+      margin-bottom: .35rem;
+    }
+    .card-body section p {
+      font-size: .93rem;
+      color: var(--text);
+    }
+
+    /* ── Status badge ────────────────────────────────────── */
+    .badge {
+      display: inline-block;
+      font-size: .7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      border-radius: 50px;
+      padding: .2rem .65rem;
+      margin-left: .6rem;
+      vertical-align: middle;
+    }
+    .badge-upcoming { background: #dcfce7; color: #166534; }
+    .badge-past     { background: var(--gray-soft); color: var(--gray-text); }
+
+    /* ── Footer ──────────────────────────────────────────── */
+    footer {
+      background: var(--blue-dark);
+      color: rgba(255,255,255,.7);
+      text-align: center;
+      font-size: .82rem;
+      padding: 1.25rem 1rem;
+    }
+    footer a { color: rgba(255,255,255,.9); }
+
+    /* ── Responsive tweaks ───────────────────────────────── */
+    @media (max-width: 540px) {
+      .card-header { flex-direction: column; gap: .4rem; }
+      .card-meta   { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════  HEADER  ═══════════════════ -->
+<header>
+  <h1>Titleless Seminar<br>for Science, Innovation, and Growth</h1>
+  <p class="tagline">An interdisciplinary forum exploring the frontier of research across the sciences and economics.</p>
+</header>
+
+<!-- ═══════════════════  ORGANIZERS  ═══════════════════ -->
+<div class="organizers" role="complementary" aria-label="Organizers">
+  <span class="label">Organizers</span>
+  <ul>
+    <li>Xueyue Liu</li>
+    <li>Dongbo Shi</li>
+    <li>Runsheng Wang</li>
+    <li>Ruichi Xiong</li>
+  </ul>
+</div>
+
+<!-- ═══════════════════  MAIN  ═══════════════════════ -->
+<main>
+  <h2 class="section-title">Seminar Schedule</h2>
+
+  <div class="seminar-list" role="list">
+
+    <!-- ── Talk 1 ── -->
+    <article class="seminar-card" role="listitem">
+      <div class="card-header">
+        <div class="card-header-info">
+          <h2>Innovation Networks and Knowledge Diffusion in High-Tech Industries
+            <span class="badge badge-upcoming">Upcoming</span>
+          </h2>
+          <p class="speaker-name">Dr. Elena Marchetti</p>
+        </div>
+        <div class="card-meta">
+          <p class="date">May 15, 2025</p>
+          <p>Thursday · 10:00 – 11:30 AM</p>
+          <p>Room 402, Econ Building</p>
+        </div>
+      </div>
+      <div class="card-body">
+        <section aria-label="Abstract">
+          <h3>Abstract</h3>
+          <p>This talk investigates how knowledge flows through inter-firm collaboration networks in semiconductor and biotech sectors. Using a novel dataset of patent co-inventorship records spanning 1990–2020, we document that firms occupying structural brokerage positions absorb external knowledge 40 percent faster than peripheral firms. We further show that policy-induced R&D tax credits amplify these network effects heterogeneously across firm size, raising important questions about optimal innovation policy design.</p>
+        </section>
+        <section aria-label="Speaker bio">
+          <h3>Speaker Bio</h3>
+          <p>Elena Marchetti is an Associate Professor of Economics at the University of Zurich and a Research Affiliate of CEPR. Her research lies at the intersection of innovation economics, industrial organization, and network theory. She received her PhD from MIT in 2014 and has published in the <em>American Economic Review</em>, <em>Review of Economic Studies</em>, and <em>Management Science</em>.</p>
+        </section>
+      </div>
+    </article>
+
+    <!-- ── Talk 2 ── -->
+    <article class="seminar-card" role="listitem">
+      <div class="card-header">
+        <div class="card-header-info">
+          <h2>Science Policy, Basic Research Funding, and Long-Run Economic Growth
+            <span class="badge badge-upcoming">Upcoming</span>
+          </h2>
+          <p class="speaker-name">Prof. Samuel Okafor</p>
+        </div>
+        <div class="card-meta">
+          <p class="date">June 3, 2025</p>
+          <p>Tuesday · 2:00 – 3:30 PM</p>
+          <p>Virtual (Zoom)</p>
+        </div>
+      </div>
+      <div class="card-body">
+        <section aria-label="Abstract">
+          <h3>Abstract</h3>
+          <p>We construct a directed measure of federal basic research expenditures matched to industry-level productivity data from 1953 to 2019. Exploiting budget shocks from the post-Sputnik era and the Cold War draw-down, we find that a one percent increase in basic research funding raises total factor productivity with a lag of roughly twelve years, with multiplier effects exceeding those of applied R&D. Our results inform ongoing debates on whether governments should prioritize mission-driven over curiosity-driven science.</p>
+        </section>
+        <section aria-label="Speaker bio">
+          <h3>Speaker Bio</h3>
+          <p>Samuel Okafor is a Professor of Public Policy and Economics at the University of Chicago Harris School. He is a Senior Fellow at the National Bureau of Economic Research (NBER) and serves on the advisory board of the U.S. National Science Foundation. His work focuses on the economics of science, public investment, and endogenous growth, and has appeared in the <em>Quarterly Journal of Economics</em> and the <em>Journal of Political Economy</em>.</p>
+        </section>
+      </div>
+    </article>
+
+    <!-- ── Talk 3 ── -->
+    <article class="seminar-card" role="listitem">
+      <div class="card-header">
+        <div class="card-header-info">
+          <h2>Machine Learning Adoption, Skill Complementarity, and Labor Market Polarization
+            <span class="badge badge-upcoming">Upcoming</span>
+          </h2>
+          <p class="speaker-name">Dr. Yuki Tanaka</p>
+        </div>
+        <div class="card-meta">
+          <p class="date">June 24, 2025</p>
+          <p>Tuesday · 10:00 – 11:30 AM</p>
+          <p>Room 210, Social Sciences</p>
+        </div>
+      </div>
+      <div class="card-body">
+        <section aria-label="Abstract">
+          <h3>Abstract</h3>
+          <p>Recent advances in machine learning have accelerated automation, yet empirical evidence on the distributional consequences remains mixed. Using linked employer–employee data from Japan and a novel index of occupational ML-exposure, we show that ML adoption raises demand for high-skill complementary tasks while displacing routine clerical and production roles. However, firms that simultaneously invest in worker retraining programs experience a 15 percent reduction in displacement rates, highlighting the policy-relevant role of human capital adjustment.</p>
+        </section>
+        <section aria-label="Speaker bio">
+          <h3>Speaker Bio</h3>
+          <p>Yuki Tanaka is a Senior Economist at the Bank of Japan Research Institute and a Visiting Scholar at Tokyo University's Institute of Social Science. She holds a PhD in Economics from Princeton University (2017). Her research concentrates on labor economics, automation, and the economics of technology adoption in East Asian economies.</p>
+        </section>
+      </div>
+    </article>
+
+    <!-- ── Talk 4 (Past) ── -->
+    <article class="seminar-card" role="listitem">
+      <div class="card-header">
+        <div class="card-header-info">
+          <h2>Entrepreneurship, Venture Capital, and Regional Divergence
+            <span class="badge badge-past">Past</span>
+          </h2>
+          <p class="speaker-name">Prof. Natalia Fernández</p>
+        </div>
+        <div class="card-meta">
+          <p class="date">April 3, 2025</p>
+          <p>Thursday · 2:00 – 3:30 PM</p>
+          <p>Room 402, Econ Building</p>
+        </div>
+      </div>
+      <div class="card-body">
+        <section aria-label="Abstract">
+          <h3>Abstract</h3>
+          <p>Venture capital flows are spatially concentrated in a handful of metro areas, contributing to regional economic divergence. We build a quantitative spatial model of VC investment with endogenous agglomeration and calibrate it to U.S. metropolitan data from 1995 to 2018. Counterfactual experiments suggest that redirecting even five percent of VC flows toward mid-tier cities would reduce regional income inequality by eight percent without significant aggregate efficiency losses, provided local knowledge ecosystems are co-developed through place-based university partnerships.</p>
+        </section>
+        <section aria-label="Speaker bio">
+          <h3>Speaker Bio</h3>
+          <p>Natalia Fernández is a Professor of Economics and the Director of the Entrepreneurship and Innovation Lab at Carlos III University of Madrid. She is a Research Fellow at CEPR and the CESifo Network. Her scholarship on entrepreneurship, finance, and regional growth has been published in the <em>Journal of Finance</em>, the <em>Review of Financial Studies</em>, and <em>Economic Policy</em>.</p>
+        </section>
+      </div>
+    </article>
+
+    <!-- ── Talk 5 (Past) ── -->
+    <article class="seminar-card" role="listitem">
+      <div class="card-header">
+        <div class="card-header-info">
+          <h2>Climate Change, Agricultural Productivity, and Food Security in Developing Economies
+            <span class="badge badge-past">Past</span>
+          </h2>
+          <p class="speaker-name">Dr. Amara Diallo</p>
+        </div>
+        <div class="card-meta">
+          <p class="date">March 13, 2025</p>
+          <p>Thursday · 10:00 – 11:30 AM</p>
+          <p>Virtual (Zoom)</p>
+        </div>
+      </div>
+      <div class="card-body">
+        <section aria-label="Abstract">
+          <h3>Abstract</h3>
+          <p>This paper quantifies the effect of temperature and precipitation shocks on maize and sorghum yields across sub-Saharan Africa using satellite-derived weather data and nationally representative household surveys from 2000 to 2022. We find that a one-degree Celsius increase above the 30°C threshold reduces yields by 4.5 percent per growing season. Further, smallholders with access to irrigation, improved seed varieties, and mobile market price information experience 60 percent smaller yield losses, underscoring the importance of complementary agricultural inputs in building climate resilience.</p>
+        </section>
+        <section aria-label="Speaker bio">
+          <h3>Speaker Bio</h3>
+          <p>Amara Diallo is a Research Economist at the World Bank's Development Research Group and a Postdoctoral Fellow at the International Food Policy Research Institute (IFPRI). He received his PhD in Agricultural and Resource Economics from UC Davis in 2020. His work on climate adaptation, technology adoption, and rural livelihoods has appeared in the <em>American Journal of Agricultural Economics</em> and <em>Nature Sustainability</em>.</p>
+        </section>
+      </div>
+    </article>
+
+  </div><!-- /seminar-list -->
+</main>
+
+<!-- ═══════════════════  FOOTER  ═══════════════════ -->
+<footer>
+  <p>© 2025 Titleless Seminar · Organized by Xueyue Liu, Dongbo Shi, Runsheng Wang &amp; Ruichi Xiong</p>
+</footer>
+
+</body>
+</html>
