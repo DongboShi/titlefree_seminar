@@ -17,7 +17,6 @@ The seminar brings together researchers working at the intersection of innovatio
 - Science policy and basic research funding
 - Machine learning, automation, and labor markets
 - Entrepreneurship, venture capital, and regional development
-- Climate change, agriculture, and development economics
 
 ## Website
 
