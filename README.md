@@ -1,6 +1,6 @@
-# Titleless Seminar for Science, Innovation, and Growth
+# Titlefree Seminar for Science, Innovation, and Growth
 
-This repository hosts the webpage for the **Titleless Seminar for Science, Innovation, and Growth** — an interdisciplinary forum exploring the frontier of research across the sciences and economics.
+This repository hosts the webpage for the **Titlefree Seminar for Science, Innovation, and Growth** — an interdisciplinary forum exploring the frontier of research across the sciences and economics.
 
 ## Organizers
 
