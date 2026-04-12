@@ -1,16 +1,20 @@
 // Seminar schedule data — edit this file to add, remove, or update talks.
 // Each entry supports the following fields:
+//   type       "talk" | "journal-club"  (required)
+//              "talk"          — invited speaker presentation
+//              "journal-club"  — group paper reading session (no speaker/bio needed)
 //   title      (string, required)
-//   speaker    (string, required)
+//   speaker    (string, required for type "talk")
 //   date       (string, required)
 //   status     "upcoming" | "past"  (required)
 //   time       (string, required)
 //   location   (string, required)
 //   abstract   (string, required)  — HTML is allowed
-//   bio        (string, required)  — HTML is allowed
+//   bio        (string, required for type "talk")  — HTML is allowed
 
 const SEMINARS = [
   {
+    type: "talk",
     title: "Innovation Networks and Knowledge Diffusion in High-Tech Industries",
     speaker: "Dr. Elena Marchetti",
     date: "May 15, 2025",
@@ -21,6 +25,16 @@ const SEMINARS = [
     bio: "Elena Marchetti is an Associate Professor of Economics at the University of Zurich and a Research Affiliate of CEPR. Her research lies at the intersection of innovation economics, industrial organization, and network theory. She received her PhD from MIT in 2014 and has published in the <em>American Economic Review</em>, <em>Review of Economic Studies</em>, and <em>Management Science</em>.",
   },
   {
+    type: "journal-club",
+    title: "The Impact of Artificial Intelligence on Innovation (Korinek & Balwit, 2023)",
+    date: "May 29, 2025",
+    status: "upcoming",
+    time: "Thursday · 10:00 – 11:30 AM",
+    location: "Room 402, Econ Building",
+    abstract: "We will read and discuss Korinek &amp; Balwit (2023), which examines how AI tools affect the productivity of researchers and the direction of scientific discovery. The paper argues that AI can act as a general-purpose technology for idea generation, substantially lowering the cost of exploring the innovation possibility frontier. Discussion will focus on implications for science policy and the future organization of research.",
+  },
+  {
+    type: "talk",
     title: "Science Policy, Basic Research Funding, and Long-Run Economic Growth",
     speaker: "Prof. Samuel Okafor",
     date: "June 3, 2025",
@@ -31,6 +45,7 @@ const SEMINARS = [
     bio: "Samuel Okafor is a Professor of Public Policy and Economics at the University of Chicago Harris School. He is a Senior Fellow at the National Bureau of Economic Research (NBER) and serves on the advisory board of the U.S. National Science Foundation. His work focuses on the economics of science, public investment, and endogenous growth, and has appeared in the <em>Quarterly Journal of Economics</em> and the <em>Journal of Political Economy</em>.",
   },
   {
+    type: "talk",
     title: "Machine Learning Adoption, Skill Complementarity, and Labor Market Polarization",
     speaker: "Dr. Yuki Tanaka",
     date: "June 24, 2025",
@@ -41,6 +56,7 @@ const SEMINARS = [
     bio: "Yuki Tanaka is a Senior Economist at the Bank of Japan Research Institute and a Visiting Scholar at Tokyo University's Institute of Social Science. She holds a PhD in Economics from Princeton University (2017). Her research concentrates on labor economics, automation, and the economics of technology adoption in East Asian economies.",
   },
   {
+    type: "talk",
     title: "Entrepreneurship, Venture Capital, and Regional Divergence",
     speaker: "Prof. Natalia Fernández",
     date: "April 3, 2025",
@@ -51,6 +67,16 @@ const SEMINARS = [
     bio: "Natalia Fernández is a Professor of Economics and the Director of the Entrepreneurship and Innovation Lab at Carlos III University of Madrid. She is a Research Fellow at CEPR and the CESifo Network. Her scholarship on entrepreneurship, finance, and regional growth has been published in the <em>Journal of Finance</em>, the <em>Review of Financial Studies</em>, and <em>Economic Policy</em>.",
   },
   {
+    type: "journal-club",
+    title: "Recombinant Growth (Weitzman, 1998)",
+    date: "March 27, 2025",
+    status: "past",
+    time: "Thursday · 10:00 – 11:30 AM",
+    location: "Room 402, Econ Building",
+    abstract: "We discussed Weitzman's (1998) seminal <em>Quarterly Journal of Economics</em> paper on recombinant growth, which models long-run growth as the combinatorial explosion of new ideas formed by merging existing ones. The session covered the paper's key propositions, its relationship to standard endogenous growth theory, and open empirical questions about how recombination rates vary across fields and institutions.",
+  },
+  {
+    type: "talk",
     title: "Climate Change, Agricultural Productivity, and Food Security in Developing Economies",
     speaker: "Dr. Amara Diallo",
     date: "March 13, 2025",
