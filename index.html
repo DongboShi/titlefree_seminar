@@ -12,6 +12,7 @@
 
     :root {
       --red:   #ff3636;
+      --blue:  #2563eb;
       --black: #000000;
       --white: #ffffff;
       --gray:  #6c757d;
@@ -149,8 +150,10 @@
       position: relative;
       top: -2px;
     }
-    .badge-upcoming { border-color: var(--red);  color: var(--red); }
-    .badge-past     { border-color: var(--rule); color: var(--gray); }
+    .badge-upcoming     { border-color: var(--red);  color: var(--red); }
+    .badge-past         { border-color: var(--rule); color: var(--gray); }
+    .badge-talk         { border-color: var(--gray); color: var(--gray); }
+    .badge-journal-club { border-color: var(--blue); color: var(--blue); }
 
     /* ── Footer ──────────────────────────────────────────── */
     footer {
@@ -207,20 +210,33 @@
   (function () {
     var list = document.getElementById('seminar-list');
     SEMINARS.forEach(function (s) {
+      var isJC = s.type === 'journal-club';
       var badgeClass = s.status === 'upcoming' ? 'badge-upcoming' : 'badge-past';
       var badgeLabel = s.status === 'upcoming' ? 'Upcoming' : 'Past';
+      var typeClass = isJC ? 'badge-journal-club' : 'badge-talk';
+      var typeLabel = isJC ? 'Journal Club' : 'Invited Talk';
+      var titleLabel = isJC ? 'Paper' : 'Title';
+
+      var speakerRow = isJC ? '' :
+        '<dt>Speaker</dt><dd class="speaker-name">' + s.speaker + '</dd>';
+      var bioRow = isJC ? '' :
+        '<dt>Speaker Bio</dt><dd>' + s.bio + '</dd>';
+
       var article = document.createElement('article');
       article.className = 'seminar-card';
       article.setAttribute('role', 'listitem');
       article.innerHTML =
         '<dl class="card-dl">' +
-          '<dt>Title</dt>'       + '<dd class="talk-title">'   + s.title   + '</dd>' +
-          '<dt>Speaker</dt>'     + '<dd class="speaker-name">' + s.speaker + '</dd>' +
-          '<dt>Date</dt>'        + '<dd>' + s.date + ' <span class="badge ' + badgeClass + '">' + badgeLabel + '</span></dd>' +
-          '<dt>Time</dt>'        + '<dd>' + s.time     + '</dd>' +
-          '<dt>Location</dt>'    + '<dd>' + s.location + '</dd>' +
-          '<dt class="gap">Abstract</dt>'    + '<dd class="gap">' + s.abstract + '</dd>' +
-          '<dt>Speaker Bio</dt>' + '<dd>'                       + s.bio      + '</dd>' +
+          '<dt>' + titleLabel + '</dt>' +
+            '<dd class="talk-title">' + s.title +
+              ' <span class="badge ' + typeClass + '">' + typeLabel + '</span>' +
+            '</dd>' +
+          speakerRow +
+          '<dt>Date</dt>'     + '<dd>' + s.date + ' <span class="badge ' + badgeClass + '">' + badgeLabel + '</span></dd>' +
+          '<dt>Time</dt>'     + '<dd>' + s.time     + '</dd>' +
+          '<dt>Location</dt>' + '<dd>' + s.location + '</dd>' +
+          '<dt class="gap">Abstract</dt>' + '<dd class="gap">' + s.abstract + '</dd>' +
+          bioRow +
         '</dl>';
       list.appendChild(article);
     });
