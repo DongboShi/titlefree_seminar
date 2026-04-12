@@ -209,7 +209,15 @@
 <script>
   (function () {
     var list = document.getElementById('seminar-list');
-    SEMINARS.forEach(function (s) {
+    var sorted = SEMINARS.slice().sort(function (a, b) {
+      var da = new Date(a.date), db = new Date(b.date);
+      if (a.status === b.status) {
+        // upcoming: ascending (soonest first); past: descending (most recent first)
+        return a.status === 'upcoming' ? da - db : db - da;
+      }
+      return a.status === 'upcoming' ? -1 : 1;
+    });
+    sorted.forEach(function (s) {
       var isJC = s.type === 'journal-club';
       var badgeClass = s.status === 'upcoming' ? 'badge-upcoming' : 'badge-past';
       var badgeLabel = s.status === 'upcoming' ? 'Upcoming' : 'Past';
