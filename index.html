@@ -202,7 +202,7 @@
 
 <!-- ═══════════════════  FOOTER  ═══════════════════ -->
 <footer>
-  <p>&copy; 2025 Titlefree Seminar &middot; Organized by Xueyue Liu, Dongbo Shi, Runsheng Wang &amp; Ruichi Xiong</p>
+  <p>&copy; 2026 Titlefree Seminar &middot; Organized by Xueyue Liu, Dongbo Shi, Runsheng Wang &amp; Ruichi Xiong</p>
 </footer>
 
 <script src="seminars.js"></script>
@@ -219,7 +219,7 @@
 
       var speakerRow = isJC ? '' :
         '<dt>Speaker</dt><dd class="speaker-name">' + s.speaker + '</dd>';
-      var bioRow = isJC ? '' :
+      var bioRow = isJC || !s.bio ? '' :
         '<dt>Speaker Bio</dt><dd>' + s.bio + '</dd>';
 
       var article = document.createElement('article');
