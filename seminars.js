@@ -15,12 +15,12 @@
 const SEMINARS = [
   {
     type: "journal-club",
-    title: "The impact of AI and digital platforms on the information ecosystem (Stiglit &amp; Ventura-Bole, 2025)",
+    title: "The impact of AI and digital platforms on the information ecosystem (Stiglits &amp; Ventura-Bole, 2025)",
     date: "April 28, 2026",
     status: "upcoming",
     time: "Tuesday · 14:00 – 15:00 PM",
     location: "Virtual (Zoom)",
-    abstract: "We will read and discuss Stiglit &amp; Ventura-Bole (2025), which develops a tractable model to study how AI and digital platforms impact the information ecosystem.",
+    abstract: "We will read and discuss Stiglitz &amp; Ventura-Bole (2025), which develops a tractable model to study how AI and digital platforms impact the information ecosystem.",
   },
   {
     type: "talk",
