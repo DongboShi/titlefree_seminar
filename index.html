@@ -192,15 +192,11 @@
 
 <!-- ═══════════════════  MAIN  ═══════════════════════ -->
 <main>
-  <h2 class="section-title" id="talks">Invited Talks</h2>
-  <div class="seminar-list" role="list" id="talk-list">
-    <!-- Invited talk cards are rendered from seminars.js -->
-  </div><!-- /talk-list -->
+  <h2 class="section-title" id="schedule">Seminar Schedule</h2>
 
-  <h2 class="section-title" id="journal-club" style="margin-top:3rem;">Journal Club</h2>
-  <div class="seminar-list" role="list" id="journal-club-list">
-    <!-- Journal club cards are rendered from seminars.js -->
-  </div><!-- /journal-club-list -->
+  <div class="seminar-list" role="list" id="seminar-list">
+    <!-- Seminar cards are rendered from seminars.js -->
+  </div><!-- /seminar-list -->
 </main>
 
 <!-- ═══════════════════  FOOTER  ═══════════════════ -->
@@ -211,8 +207,7 @@
 <script src="seminars.js"></script>
 <script>
   (function () {
-    var talkList = document.getElementById('talk-list');
-    var jcList   = document.getElementById('journal-club-list');
+    var list = document.getElementById('seminar-list');
     SEMINARS.forEach(function (s) {
       var isJC = s.type === 'journal-club';
       var badgeClass = s.status === 'upcoming' ? 'badge-upcoming' : 'badge-past';
@@ -242,7 +237,7 @@
           '<dt class="gap">Abstract</dt>' + '<dd class="gap">' + s.abstract + '</dd>' +
           bioRow +
         '</dl>';
-      (isJC ? jcList : talkList).appendChild(article);
+      list.appendChild(article);
     });
   })();
 </script>
