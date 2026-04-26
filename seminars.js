@@ -36,7 +36,7 @@ const SEMINARS = [
     title: "Agentic Framework for Political Biography Extraction",
     speaker: "Yifei Zhu",
     date: "April 21, 2026",
-    status: "upcoming",
+    status: "past",
     time: "Tuesday · 14:00 – 15:00 PM",
     location: "Virtual (Zoom: 637 734 0280（BIMSA）)",
     abstract: "The production of large-scale political datasets typically demands extracting structured facts from vast piles of unstructured documents or web sources, a task that traditionally relies on expensive human experts and remains prohibitively difficult to automate at scale. In this paper, we leverage Large Language Models (LLMs) to automate the extraction of multidimensional elite biographies, addressing a long-standing bottleneck in political science research. We propose a two-stage “Synthesis-Coding” framework for complex extraction task: an upstream synthesis stage that uses recursive agentic LLMs to search, filter, and curate biography from heterogeneous web sources, followed by a downstream coding stage that maps curated biography into structured dataframes. We validate this framework through three primary results. First, we demonstrate that, when given curated contexts, LLM coders match or outperform human experts in extraction accuracy. Second, we show that in web environments, the agentic system synthesizes more information from web resources than human collective intelligence (Wikipedia). Finally, we diagnosed that directly coding from long and multilanguage corpora introduces bias that the synthesis stage can alleviate by curating evidence into signal-dense representations. By comprehensive evaluation, We provide a generalizable, scalable framework for building transparent and expansible large scale database in political science.",
