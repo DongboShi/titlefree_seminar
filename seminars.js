@@ -13,11 +13,29 @@
 //   bio        (string, required for type "talk")  — HTML is allowed
 
 const SEMINARS = [
+   {
+    type: "journal-club",
+    title: "Growth is Getting Harder to Find, Not Ideas (Fort et al)",
+    date: "May 26, 2026",
+    status: "upcoming",
+    time: "Tuesday · 14:00 – 15:00 PM",
+    location: "Virtual",
+    abstract: "We will read and discuss the NBER working paper examines the relationships between research inputs and ideas (patents) versus ideas and growth.",
+  },
+  {
+    type: "journal-club",
+    title: "Deep Research on a Loop: Using AI Agents to Construct Economic Datasets (Afonso et al)",
+    date: "May 19, 2026",
+    status: "upcoming",
+    time: "Tuesday · 14:00 – 15:00 PM",
+    location: "Virtual",
+    abstract: "We will read and discuss the NBER working paper which uses AI agents to assemble datasets from publicly available sources.",
+  },
   {
     type: "journal-club",
     title: "Solving Problems of Unknown Difficulty; Sharing Credit for Joint Research (Nicholas Wu)",
     date: "May 12, 2026",
-    status: "upcoming",
+    status: "past",
     time: "Tuesday · 14:00 – 15:00 PM",
     location: "Virtual",
     abstract: "We will read and discuss the rising star microeconomist Nicholas Wu's JMP and another related working paper.",
