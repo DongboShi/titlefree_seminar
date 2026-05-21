@@ -26,7 +26,7 @@ const SEMINARS = [
     type: "journal-club",
     title: "Deep Research on a Loop: Using AI Agents to Construct Economic Datasets (Afonso et al)",
     date: "May 19, 2026",
-    status: "upcoming",
+    status: "past",
     time: "Tuesday · 14:00 – 15:00 PM",
     location: "Virtual",
     abstract: "We will read and discuss the NBER working paper which uses AI agents to assemble datasets from publicly available sources.",
