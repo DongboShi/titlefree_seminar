@@ -14,10 +14,19 @@
 
 const SEMINARS = [
    {
+    type: "brown-bag",
+    title: "Early-career disruptors produce lasting innovation but pay a professional penalty  (Xie et al)",
+    date: "June 29, 2026",
+    status: "upcoming",
+    time: "Tuesday · 14:00 – 15:00 PM",
+    location: "Virtual",
+    abstract: "While the macro-level decline of disruptive science threatens innovation, how this decline relates to individual scientists’ career trajectories and professional costs remains unknown. Using a dataset of more than 30 million articles published from 1960 to 2021, we track researchers across their careers and classify their early-career strategies based on publication volume and disruption index. We find that although the proportion of early-career disruptors has declined over time, these individuals retain a capacity for highly disruptive science throughout their careers. Crucially, however, early disruptors face substantial professional costs: they have higher attrition rates, shorter careers, and accumulate less career prestige than peers who prioritize publication volume. Finally, we show that intense competition and traditional funding mechanisms amplify this asymmetry, penalizing high-risk, high-reward research. Our findings reveal a fundamental misalignment between institutional metrics and scientific progress, offering insights for science policy and academic career sustainability. ",
+  },
+  {
     type: "journal-club",
     title: "Growth is Getting Harder to Find, Not Ideas (Fort et al)",
     date: "May 26, 2026",
-    status: "upcoming",
+    status: "past",
     time: "Tuesday · 14:00 – 15:00 PM",
     location: "Virtual",
     abstract: "We will read and discuss the NBER working paper examines the relationships between research inputs and ideas (patents) versus ideas and growth.",
