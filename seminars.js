@@ -17,7 +17,7 @@ const SEMINARS = [
     type: "brown-bag",
     title: "Early-career disruptors produce lasting innovation but pay a professional penalty  (Xie et al)",
     speaker: "Dongbo Shi",
-    date: "May 29, 2026",
+    date: "June 2, 2026",
     status: "upcoming",
     time: "Tuesday · 14:00 – 15:00 PM",
     location: "Virtual",
