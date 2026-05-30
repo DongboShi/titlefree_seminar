@@ -3,9 +3,9 @@
 //   type       "talk" | "journal-club" | "brown-bag"  (required)
 //              "talk"          — invited speaker presentation
 //              "journal-club"  — group paper reading session (no speaker/bio needed)
-//              "brown-bag"     — brown-bag presentation
+//              "brown-bag"     — informal lunch-and-learn presentation
 //   title      (string, required)
-//   speaker    (string, required for type "talk")
+//   speaker    (string, required for type "talk" and "brown-bag")
 //   date       (string, required)
 //   status     "upcoming" | "past"  (required)
 //   time       (string, required)

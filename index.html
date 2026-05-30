@@ -218,18 +218,22 @@
       }
       return a.status === 'upcoming' ? -1 : 1;
     });
+    var typeMeta = {
+      'journal-club': { badgeClass: 'badge-journal-club', typeLabel: 'Journal Club', titleLabel: 'Paper', hasSpeakerSection: false },
+      'brown-bag': { badgeClass: 'badge-brown-bag', typeLabel: 'Brown Bag', titleLabel: 'Title', hasSpeakerSection: true },
+      'talk': { badgeClass: 'badge-talk', typeLabel: 'Invited Talk', titleLabel: 'Title', hasSpeakerSection: true }
+    };
     sorted.forEach(function (s) {
-      var isJC = s.type === 'journal-club';
-      var isBrownBag = s.type === 'brown-bag';
       var badgeClass = s.status === 'upcoming' ? 'badge-upcoming' : 'badge-past';
       var badgeLabel = s.status === 'upcoming' ? 'Upcoming' : 'Past';
-      var typeClass = isJC ? 'badge-journal-club' : isBrownBag ? 'badge-brown-bag' : 'badge-talk';
-      var typeLabel = isJC ? 'Journal Club' : isBrownBag ? 'Brown Bag' : 'Invited Talk';
-      var titleLabel = isJC ? 'Paper' : 'Title';
+      var meta = typeMeta[s.type] || typeMeta['talk'];
+      var typeClass = meta.badgeClass;
+      var typeLabel = meta.typeLabel;
+      var titleLabel = meta.titleLabel;
 
-      var speakerRow = isJC ? '' :
-        '<dt>Speaker</dt><dd class="speaker-name">' + s.speaker + '</dd>';
-      var bioRow = isJC || !s.bio ? '' :
+      var speakerRow = meta.hasSpeakerSection && s.speaker ?
+        '<dt>Speaker</dt><dd class="speaker-name">' + s.speaker + '</dd>' : '';
+      var bioRow = !meta.hasSpeakerSection || !s.bio ? '' :
         '<dt>Speaker Bio</dt><dd>' + s.bio + '</dd>';
 
       var article = document.createElement('article');
