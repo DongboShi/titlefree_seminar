@@ -1,8 +1,9 @@
 // Seminar schedule data — edit this file to add, remove, or update talks.
 // Each entry supports the following fields:
-//   type       "talk" | "journal-club"  (required)
+//   type       "talk" | "journal-club" | "brown-bag"  (required)
 //              "talk"          — invited speaker presentation
 //              "journal-club"  — group paper reading session (no speaker/bio needed)
+//              "brown-bag"     — brown-bag presentation
 //   title      (string, required)
 //   speaker    (string, required for type "talk")
 //   date       (string, required)
