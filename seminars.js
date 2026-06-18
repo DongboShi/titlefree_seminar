@@ -13,12 +13,21 @@
 //   bio        (string, required for type "talk")  — HTML is allowed
 
 const SEMINARS = [
-   {
+  {
+    type: "journal-club",
+    title: "Research and the Approval Process: The Organization of Persuasion (Emeric Henry and Marco Ottaviani); Trials and Terminations: Learning from Competitors' R&D Failures (Joshua L. Krieger)",
+    date: "June 23, 2026",
+    status: "upcoming",
+    time: "Tuesday · 14:00 – 15:00 PM",
+    location: "Virtual",
+    abstract: "we will discuss two papers on the dynamics of R&D investments and regulatory approvals. We will first examine how Henry and Ottaviani (2019) model our common application-approval workflows as a game of persuasion. Following that, we will draw on Krieger's (2020) work to explore practical empirical strategies for matching strategic innovation behaviors—such as R&D continuation and patenting decisions- to data.",
+  },
+  {
     type: "brown-bag",
     title: "Early-career disruptors produce lasting innovation but pay a professional penalty  (Xie et al)",
     speaker: "Dongbo Shi",
     date: "June 2, 2026",
-    status: "upcoming",
+    status: "past",
     time: "Tuesday · 14:00 – 15:00 PM",
     location: "Virtual",
     abstract: "While the macro-level decline of disruptive science threatens innovation, how this decline relates to individual scientists’ career trajectories and professional costs remains unknown. Using a dataset of more than 30 million articles published from 1960 to 2021, we track researchers across their careers and classify their early-career strategies based on publication volume and disruption index. We find that although the proportion of early-career disruptors has declined over time, these individuals retain a capacity for highly disruptive science throughout their careers. Crucially, however, early disruptors face substantial professional costs: they have higher attrition rates, shorter careers, and accumulate less career prestige than peers who prioritize publication volume. Finally, we show that intense competition and traditional funding mechanisms amplify this asymmetry, penalizing high-risk, high-reward research. Our findings reveal a fundamental misalignment between institutional metrics and scientific progress, offering insights for science policy and academic career sustainability. ",
